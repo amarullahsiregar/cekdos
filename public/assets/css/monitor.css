@@ -2,6 +2,9 @@
     --monitor-width: 1366px;
     --monitor-height: 768px;
 }
+.copyright {
+    color: rebeccapurple;
+}
 
 div.absen.slick-slide div div div.status-kehadiran {
     margin-top: 31.54vh;
@@ -17,7 +20,7 @@ div.mengajar.slick-slide div div div.status-kehadiran h2 {
 }
 
 .hadir {
-    background-color: var(--dosen_card_hadir);
+    color: lightskyblue;
 }
 
 div.slick-track div.mengajar div.card-mahasiswa.text-center {
@@ -28,13 +31,10 @@ div.slick-track div.absen div.card-mahasiswa.text-center {
 }
 
 .absen {
-    background-color: var(--dosen_card_absen);
-}
-.kosong {
-    background-color: #d5e1e5;
+    color: orangered;
 }
 .mengajar {
-    background-color: var(--dosen_card_mengajar);
+    color: green;
 }
 
 .slick-slide {
