@@ -47,7 +47,7 @@
             slidesToShow: 2,
             slidesToScroll: 2,
             infinite: false,    //true untuk slide berulang ke awal
-            autoplay: true,
+            autoplay: false,
             autoplaySpeed: 6000,
             dots: true,
             arrows: true,

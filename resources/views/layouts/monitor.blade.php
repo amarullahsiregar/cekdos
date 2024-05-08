@@ -19,6 +19,7 @@
 
     {{-- <script src="https://kit.fontawesome.com/a031935a14.js" crossorigin="anonymous"></script> --}}
     @yield('refresh-time')
+    @vite([])
 </head>
 <body>
     @yield('content')
