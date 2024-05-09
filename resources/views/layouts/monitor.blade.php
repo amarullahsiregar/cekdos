@@ -28,7 +28,7 @@
 </body>
 <footer>
     <div>
-        <p class="copyright" style="text-align: center">Copyright &copy; 2020 Cekdos</p>
+        <p class="copyright" style="text-align: center">Copyright &copy; 2024 Cekdos</p>
     </div>
 </footer>
 </html>
