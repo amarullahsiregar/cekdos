@@ -18,9 +18,8 @@
         if (isset($details)) {
            dd($details);
         }
-        $details = array('email'=>'sambilansada@gmail.com');
         $nav1 = "<< Dashboard";
-        $nav1ref =  url('administrator-dashboard'.'/' . 1 );
+        $nav1ref =  url('administrator-dashboard'.'/' . $key );
         $inputclass = "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500";
     @endphp
     <div>
@@ -29,7 +28,7 @@
             <h1 class="border-gray-800 text-xl">Edit Data Mahasiswa</h1>
         </div>
 
-        <form action="/mahasiswa-put/{{ $user->nim }}" method="POST" class="max-w-sm mx-auto">
+        <form action="/mahasiswa-edit-put/{{ $key }}" method="POST" class="max-w-sm mx-auto">
             @csrf
             @method('PUT')
             <div class="row">

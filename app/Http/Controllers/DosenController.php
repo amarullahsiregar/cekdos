@@ -12,10 +12,10 @@ class DosenController extends Controller
         $abc = Dosen::all();
         return view('dosen.lists', ['dosens' => $abc]);
     }
-    public function create()
-    {
-        return view('dosen.create');
-    }
+    // public function create()
+    // {
+    //     return view('dosen.create');
+    // }
     // public function store(Request $request)
     // {
     //     if ($request->validate([
@@ -32,7 +32,6 @@ class DosenController extends Controller
     //             'password' => bcrypt($request->input('password')),
     //             'inisial_dosen' => $request->input('inisial_dosen')
     //         ]);
-    //         return redirect('admin-dashboard');
     //     }
     // }
 }

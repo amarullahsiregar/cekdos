@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdministratorController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\MahasiswaController;
@@ -12,25 +12,21 @@ Route::middleware('web')->group(function () {
     Route::get('/landing-mobile', [MonitorController::class, 'indexMobile'])->name('landing.mobile');
     Route::get('/login', [AuthController::class, 'loginForm'])->name('login');
     Route::post('/login-post', [AuthController::class, 'loginPost']);
-    Route::get('/admin-dashboard' . '/' . '{username}', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 });
 
 Route::get('/dosens',  [DosenController::class, 'index'])->name('dosen.lists');
-Route::get('/mahasiswas', [MahasiswaController::class, 'index'])->name('mahasiswa');
 
-Route::get('/mahasiswa/{key}', [MahasiswaController::class, 'edit']);
-
-Route::get('/dosen-add', [DosenController::class, 'create']);
-Route::get('/dosen-add/{key}', [AdminController::class, 'addDosen']);
-Route::post('/dosen-add-post', [AdminController::class, 'storeDosen']);
-
-Route::get('/mahasiswa-add', function () {
-    return view('welcome');
-})->name('add mahasiswa');
-Route::get('/mahasiswa-add/{key}', [AdminController::class, 'addStudent']);
-Route::post('/mahasiswa-add-post', [MahasiswaController::class, 'create']);
-
-Route::group(['middleware' => ['auth:admin']], function () {
+Route::group(['middleware' => ['auth:administrator']], function () {
+    Route::get('/mahasiswas', [AdministratorController::class, 'mahasiswas'])->name('mahasiswa');
+    Route::get('/mahasiswa/{nim}', [AdministratorController::class, 'editStudent']);
+    Route::get('/mahasiswa-add/{key}', [AdministratorController::class, 'addStudent'])->name('add mahasiswa');
+    Route::post('/mahasiswa-add-post/{key}', [AdministratorController::class, 'storeStudent']);
+    Route::put('mahasiswa-edit-put/{key}', [AdministratorController::class, 'store']);
+    Route::get('/dosen-add/{key}', [AdministratorController::class, 'addDosen']);
+    Route::post('/dosen-add-post/{key}', [AdministratorController::class, 'storeDosen']);
+    Route::get('/administrator-dashboard' . '/' . '{username}', [AdministratorController::class, 'dashboard'])->name('administrator.dashboard');
+    Route::get('/my-session', [AuthController::class, 'session']);
+    Route::get('/logout-admin', [AuthController::class, 'logout'])->name('logout-admin');
 });
 
 Route::group(['middleware' => ['auth:mahasiswa']], function () {

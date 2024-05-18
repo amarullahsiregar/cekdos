@@ -34,7 +34,8 @@
                                     {{ $dosen->nama }}
                                 </h1>
                                 <div class="status-kehadiran text-center">
-                                    <h2 class="mb-5 min-h-14 text-lg xl:text-4xl" >Sedang {{ $dosen->status_kehadiran }}</h2>
+                                    <h2 class="mb-3 min-h-14 text-lg xl:text-4xl" >Sedang {{ $dosen->status_kehadiran }}</h2>
+                                    <h3 class="mb-2 min-h-14 text-base xl:text-2xl" >Kesediaan Bimbingan: {{ $dosen->kesediaan_bimbingan }}</h3>
                                 </div>
                             </div>
                         </div>
@@ -49,13 +50,22 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($antrians as $antrian)
-                                    @if ($antrian->email == $dosen->email)
-                                    <tr>
-                                        <td class="p-1 text-sm border border-gray-400">{{ $antrian->nama_mahasiswa }}</td>
-                                        <td class="p-1 text-sm border border-gray-400 text-center">{{ $antrian->status }}</td>
-                                    </tr>
-                                        @else
-
+                                        @if ($antrian->email == $dosen->email)
+                                        @switch($antrian->status)
+                                            @case('Selesai')
+                                                <tr class="h-12 py-2 bg-lime-200">
+                                                @break
+                                            @case('Proses')
+                                                <tr class="h-12 py-2 bg-yellow-100">
+                                                @break
+                                            @case('Menunggu')
+                                                <tr class="h-12 py-2 bg-yellow-200">
+                                                @break
+                                            @default
+                                        @endswitch
+                                            <td class=" px-4 text-lg font-bold border border-gray-400">{{ $antrian->nama_mahasiswa }}</td>
+                                            <td class=" px-4 text-lg font-bold border border-gray-400 text-center">{{ $antrian->status }}</td>
+                                        </tr>
                                         @endif
                                     @endforeach
 
@@ -78,7 +88,7 @@
             slidesToShow: 2,
             slidesToScroll: 2,
             infinite: false,    //true untuk slide berulang ke awal
-            autoplay: false,
+            autoplay: true,
             autoplaySpeed: 6000,
             dots: true,
             arrows: true,

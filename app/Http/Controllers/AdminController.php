@@ -57,15 +57,6 @@ class AdminController extends Controller
             return redirect('admin-dashboard');
         }
     }
-    public function dashboardNoMail()
-    {
-        if (Admin::all()->where('email', '=', 'ra72garbp@gmail.com')->first() != null) {
-            $details = Admin::all()->where('email', '=', 'ra72garbp@gmail.com')->first();
-            return view('admin.dashboard', compact('details'));
-        } else {
-            return '<h1 class="text-red-600">Maaf Anda Bukan Admin</h1>';
-        }
-    }
 
     /**
      * Show the form for creating a new resource.

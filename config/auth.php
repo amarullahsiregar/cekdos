@@ -44,9 +44,9 @@ return [
             'driver' => 'session',
             'provider' => 'mahasiswas',
         ],
-        'admin' => [
+        'administrator' => [
             'driver' => 'session',
-            'provider' => 'admins',
+            'provider' => 'administrators',
         ],
         // ... guard lainnya
     ],
@@ -79,10 +79,11 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\Mahasiswa::class,
         ],
-        'admins' => [
+        'administrators' => [
             'driver' => 'eloquent',
-            'model' => App\Models\Admin::class,
+            'model' => App\Models\Administrator::class,
         ],
+
         // ... provider lainnya
     ],
 

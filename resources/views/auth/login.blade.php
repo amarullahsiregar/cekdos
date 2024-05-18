@@ -31,7 +31,7 @@
                     <span class="help-link__text">
                         Daftar hadir dosen ?
                     </span>
-                    <a href="https://cekdos.my.id" class="text-sky-200 text-sm ui-button ui-button--link arrow-link">
+                    <a href="https://cekdos.my.id" class="text-blue-400 text-sm ui-button ui-button--link arrow-link">
                         ke Home »
 
                     </a>

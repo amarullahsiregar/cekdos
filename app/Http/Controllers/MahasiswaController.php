@@ -19,15 +19,11 @@ class MahasiswaController extends Controller
         $mahasiswas = Mahasiswa::all();
         return view('mahasiswa.index', ['mahasiswas' => $mahasiswas]);
     }
-    public function edit($key)
-    {
-        $mahasiswa = Mahasiswa::find($key);
-        return view('mahasiswa.edit', ['user' => $mahasiswa]);
-    }
+
     public function dashboard($username)
     {
-
         $details = Mahasiswa::find($username);
+
         if ($details != null) {
             $statusdosen1 = Dosen::where('email', '=', $details->dosbing1)->first();
             $statusdosen2 = Dosen::where('email', '=', $details->dosbing2)->first();
@@ -47,6 +43,33 @@ class MahasiswaController extends Controller
         ]);
         Session::flash('message', 'This is a message!');
         return redirect('/mahasiswa-dashboard' . '/' . $request->input('nim'));
+    }
+    public function storeStudent(Request $request)
+    {
+        // Validasi input data (optional)
+        if ($request->validate([
+            'nim' => 'required|unique:mahasiswas,nim',
+            'nama' => 'required',
+            'password' => 'required',
+            'topik_ta' => 'required',
+            'dosbing1' => 'required',
+            'dosbing2' => ''
+        ])) {
+            Mahasiswa::create([
+                'nim' => $request->input('nim'),
+                'nama' => $request->input('nama'),
+                'email' => $request->email,
+                'password' => bcrypt($request->input('password')),
+                'topik_ta' => $request->input('topik_ta'),
+                'dosbing1' => $request->input('dosbing1'),
+                'dosbing2' => $request->input('dosbing2')
+            ]);
+            Log::alert("Berhasil Ditambahkan");
+            return redirect(route('monitor'));
+        } else {
+            $mahasiswa = Mahasiswa::find($request->nim);
+            return redirect('/mahasiswa' . '/' . $mahasiswa->nama);
+        }
     }
     public function create(Request $request)
     {

@@ -4,7 +4,7 @@
 @php
 $details = array('email'=>'sambilansada@gmail.com');
 $nav1 = "<< Dashboard";
-$nav1ref =  url('admin-dashboard'.'/' . $details['email'] );
+$nav1ref =  url('administrator-dashboard'.'/' . 1 );
 @endphp
 
 @include('partials.navbar')
@@ -19,7 +19,7 @@ $nav1ref =  url('admin-dashboard'.'/' . $details['email'] );
                         </div>
                         <div class="ms-auto my-auto mt-lg-0 mt-4">
                             <div class="ms-auto my-auto">
-                                <a href="{{'/mahasiswa-add'}}" class="bg-gradient-to-r from-cyan-500 to-blue-500 border-2 border-solid border-gray-500 hover:bg-blue-400 text-white py-2 px-4 rounded">
+                                <a href="{{'/mahasiswa-add'.'/'.$key}}" class="bg-gradient-to-r from-cyan-500 to-blue-500 border-2 border-solid border-gray-500 hover:bg-blue-400 text-white py-2 px-4 rounded">
                                     <button type="submit" class="btn  btn-md mt-4 mb-4 ">+&nbsp; Tambah Mahasiswa</button>
                                 </a>
                             </div>

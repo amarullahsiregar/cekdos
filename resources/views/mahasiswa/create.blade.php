@@ -7,11 +7,11 @@
     $inputclass = "block w-full rounded-md border-0 py-1.5 pl-5 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6";
 
     $nav1= 'Tambah Mahasiswa';
-    $nav1ref = url('mahasiswa-add'.'/'.$details->nim);
+    $nav1ref = url('mahasiswa-add'.'/'.$details->id);
     $nav2 = "Dashboard Admin";
-    $nav2ref = url('admin-dashboard'.'/'.$details->nim);
+    $nav2ref = url('administrator-dashboard'.'/'.$details->id);
     $nav3 = "Tambah Dosen";
-    $nav3ref = url('dosen-add'.'/'.$details->nim);
+    $nav3ref = url('dosen-add'.'/'.$details->id);
     $nav4 = "Logout";
     $nav4ref =  url('logout');
 @endphp
@@ -22,7 +22,7 @@
                     <h1 class="position-absolute font-weight-bolder text-title grd-steelblue ">Tambah Data Mahasiswa</h1>
             </div>
             <div class="mt-5 mt-lg-4">
-                <form action="/mahasiswa-add-post" method="post">
+                <form action="/mahasiswa-add-post/{{$details->id}}" method="post">
                     @csrf <!-- Laravel CSRF token-->
                     <div class="mb-3 row mx-5">
                         <label class="col-md-2 col-form-label" for="nim">NIM : </label>

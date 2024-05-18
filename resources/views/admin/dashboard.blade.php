@@ -4,15 +4,15 @@
 <body>
     @php
     $nav1 = "Dashboard Admin";
-    $nav1ref = url('admin-dashboard'.'/'.$details->nim);
+    $nav1ref = url('administrator-dashboard'.'/'.$details->id);
     $nav2 = "Tambah Dosen";
-    $nav2ref = url('dosen-add'.'/'.$details->nim);
+    $nav2ref = url('dosen-add'.'/'.$details->id);
     $nav3 = "Tambah Mahasiswa";
-    $nav3ref = url('mahasiswa-add'.'/'.$details->nim);
+    $nav3ref = url('mahasiswa-add'.'/'.$details->id);
     $nav4 = "Logout";
-    $nav4ref =  url('logout');
+    $nav4ref =  url('logout-admin');
     @endphp
-    <div class="admin-dashboard bg-white overflow-hidden shadow rounded-lg border">
+    <div class="administrator-dashboard bg-white overflow-hidden shadow rounded-lg border">
         @include('partials.navbar')
         <div class="px-4 py-5 sm:px-6">
             @if($details!=null)

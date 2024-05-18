@@ -104,7 +104,7 @@
                                 </div>
                         </div>
                     <div class="row justify-content mt-2 mb-5 mx-7">
-                        <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">Simpan</button>
+                        <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">Ambil Antrian</button>
                     </div>
 
                 </form>
