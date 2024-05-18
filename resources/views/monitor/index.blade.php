@@ -2,35 +2,66 @@
 
 @section('title', 'List Dosens')
 @section('refresh-time')
-<meta http-equiv="refresh" content="{{ (count($dosens)*3)+5 }}">    {{-- Melakukan Auto Refresh sebanyak jumlah dosen --}}
+    <meta http-equiv="refresh" content="{{ (count($dosens)*3)+5 }}">
 @endsection
 
 @section('content')
+</head>
+<body class="bg-sky-200 p-6">
 <div class="main-container">
+    <h1 class="text-5xl tanggal mb-3 px-5 pb-5">
+        {{ \Carbon\Carbon::now()->isoFormat('dddd') }}
+        {{" ".date("d F Y");}}
+    </h1>
     <div class="slider">
         @foreach ($dosens as $dosen)
             @switch($dosen->status_kehadiran)
                 @case('Hadir')
-                    <div class="hadir border">
+                    <div class="rounded-xl mx-2 xl:mx-3 hadir bg-emerald-500 xl:bg-green-500 xl:text-white">
                     @break
                 @case('Tidak Hadir')
-                    <div class="absen border">
+                    <div class="rounded-xl mx-2 xl:mx-3 absen bg-red-500 text-white ">
                     @break
                 @case('Mengajar')
-                    <div class="mengajar border">
+                    <div class="rounded-xl mx-2 xl:mx-3 mengajar bg-sky-500">
                     @break
                 @default
 
             @endswitch
-                        <div class="text-center">
+                        <div class="">
                             <div >
-                                <h1 class="nama_dosen text-center">
+                                <h1 class="nama_dosen text-center min-h-28 text-xl xl:text-5xl mt-20 xl:mt-10 mb-6">
                                     {{ $dosen->nama }}
                                 </h1>
                                 <div class="status-kehadiran text-center">
-                                    <h2>Sedang {{ $dosen->status_kehadiran }}</h2>
+                                    <h2 class="mb-5 min-h-14 text-lg xl:text-4xl" >Sedang {{ $dosen->status_kehadiran }}</h2>
                                 </div>
                             </div>
+                        </div>
+                        <div class="bg-white text-black rounded-md min-h-80">
+                            <h1 class="text-center pt-3 text-md xl:text-3xl">Antrean Bimbingan</h1>
+                            <table class="table-auto border-gray-400 m-5 " id="users-list">
+                                <thead class="">
+                                    <tr class="tr-mahasiswa">
+                                        <th  class="p-1 border border-gray-400 min-w-full" style="width: 11.2641%;">Nama</th>
+                                        <th  class="p-1 border border-gray-400 min-w-80" style="width: 7.07134%;">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($antrians as $antrian)
+                                    @if ($antrian->email == $dosen->email)
+                                    <tr>
+                                        <td class="p-1 text-sm border border-gray-400">{{ $antrian->nama_mahasiswa }}</td>
+                                        <td class="p-1 text-sm border border-gray-400 text-center">{{ $antrian->status }}</td>
+                                    </tr>
+                                        @else
+
+                                        @endif
+                                    @endforeach
+
+
+                                </tbody>
+                            </table>
                         </div>
                     </div>
         @endforeach
@@ -54,5 +85,13 @@
         });
 
     });
-    </script>
+</script>
+<script type="text/javascript">
+
+    if (screen.width <= 699) {
+    document.location = 'landing-mobile';
+    }
+
+</script>
+
 @endpush

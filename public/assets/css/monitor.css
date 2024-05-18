@@ -2,40 +2,6 @@
     --monitor-width: 1366px;
     --monitor-height: 768px;
 }
-.copyright {
-    color: rebeccapurple;
-}
-
-div.absen.slick-slide div div div.status-kehadiran {
-    margin-top: 31.54vh;
-}
-div.absen.slick-slide div div div.status-kehadiran h2 {
-    font-size: 5vh !important;
-}
-div.mengajar.slick-slide div div div.status-kehadiran {
-    margin-top: 31.54vh;
-}
-div.mengajar.slick-slide div div div.status-kehadiran h2 {
-    font-size: 5vh !important;
-}
-
-.hadir {
-    color: lightskyblue;
-}
-
-div.slick-track div.mengajar div.card-mahasiswa.text-center {
-    opacity: 0;
-}
-div.slick-track div.absen div.card-mahasiswa.text-center {
-    opacity: 0 !important;
-}
-
-.absen {
-    color: orangered;
-}
-.mengajar {
-    color: green;
-}
 
 .slick-slide {
     height: 82vh !important;
@@ -47,12 +13,14 @@ div.slick-track div.absen div.card-mahasiswa.text-center {
 
 @media screen and (min-width: 1366px) and (max-width: 1366px) {
     body {
-        background-image: url("/storage/1366x768-frame-test.png");
+        /* background-image: url("/storage/1366x768-frame-test.png"); */
+        background-color: #d5e1e5;
     }
 }
 @media screen and (min-width: 1920px) and (max-width: 1920px) {
     body {
-        background-image: url("/storage/1920x1080-frame-test.png");
+        /* background-image: url("/storage/1920x1080-frame-test.png"); */
+        background-color: #d5e1e5;
         background-size: auto;
     }
 }

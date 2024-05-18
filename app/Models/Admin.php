@@ -12,6 +12,7 @@ class Admin extends Model implements Authenticatable
 
     protected $table = 'admins';
     protected $primaryKey = 'email';
+    protected $keyType = 'String';
     protected $fillable = [
         'nama', 'email', 'password'  //Attribut Login Mahasiswa
     ];

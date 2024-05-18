@@ -12,7 +12,8 @@ class Dosen extends Model implements Authenticatable
 
     protected $table = 'dosens';
     protected $fillable = [
-        'email_dosen',
+        'id',
+        'email',
         'nama',
         'password',
         'inisial_dosen',

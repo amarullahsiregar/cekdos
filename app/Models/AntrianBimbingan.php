@@ -17,7 +17,7 @@ class AntrianBimbingan extends Model
         'nim',
         'nama_mahasiswa',
         'topik_ta',
-        'email_dosen',
+        'email',
         'status',
         'created_at',
         'updated_at',
@@ -27,9 +27,12 @@ class AntrianBimbingan extends Model
         'waktu_pengajuan' => 'datetime',
         // Atribut lain yang perlu di-cast
     ];
+    protected $hidden = [
+        // Kolom yang ingin disembunyikan
+    ];
 
     public function dosen()
     {
-        return $this->belongsTo(Dosen::class, 'email_dosen', 'email_dosen');
+        return $this->belongsTo(Dosen::class, 'email', 'email');
     }
 }

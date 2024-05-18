@@ -13,7 +13,13 @@ class Mahasiswa extends Model implements Authenticatable
     protected $table = 'mahasiswas';
     protected $primaryKey = 'nim';
     protected $fillable = [
-        'nim', 'nama', 'email', 'password', 'dosbing1', 'topik_ta', 'dosbing2'  //Attribut Login Mahasiswa
+        'nim',
+        'nama',
+        'email',
+        'password',
+        'dosbing1',
+        'topik_ta',
+        'dosbing2'  //Attribut Login Mahasiswa
     ];
     protected $hidden = [
         'password',
