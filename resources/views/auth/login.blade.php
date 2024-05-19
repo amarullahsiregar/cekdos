@@ -1,12 +1,16 @@
 @extends('layouts.app')
 @section('title','Login')
 @section('adds')
-<link id="pagestyle" href="../assets/css/main.css" rel="stylesheet" />
 
-<link rel="preconnect" href="https://fonts.gstatic.com">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+<!-- My Style v -->
+<link id="pagestyle" href="../assets/css/main.css" rel="stylesheet" />
 <link id="pagestyle" href="../assets/css/glass.css" rel="stylesheet" />
+<!-- My Style ^-->
+
+ <!-- Google Font v -->
+ <link rel="preconnect" href="https://fonts.gstatic.com">
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+ <!-- Google Font ^ -->
 @endsection
 @section('content')
     <div class="main-container">
@@ -22,21 +26,20 @@
                 <input class="p-4 text-white" type="text" placeholder="user@email.com" id="email"  name="email">
 
                 <label class="px-4 pb-4" for="password">Password</label>
-                <input class="p-4" type="password" placeholder="Masukkan Password Anda" id="password"  name="password" >
+                <input class="p-4 text-white" type="password" placeholder="Masukkan Password Anda" id="password"  name="password" >
 
-                <button class="mt-20 bg-white py-4" type="submit">Log In</button>
+                <button class="mt-10 bg-white py-4 mb-5" type="submit">Log In</button>
                 <br>
-                <!-- Move to Main -->
+                <!-- Pindah ke Halaman Home -->
                 <p class="help-link signup-link text-xs ">
                     <span class="help-link__text">
                         Daftar hadir dosen ?
                     </span>
-                    <a href="https://cekdos.my.id" class="text-blue-400 text-sm ui-button ui-button--link arrow-link">
+                    <a href="https://cekdos.my.id" class="text-blue-600 text-sm ui-button ui-button--link arrow-link">
                         ke Home »
-
                     </a>
                 </p>
-                <!-- Move to Main -->
+                <!-- Pindah ke Halaman Home -->
         </form>
     </div>
 @endsection

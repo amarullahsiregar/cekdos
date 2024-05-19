@@ -11,7 +11,10 @@ class MonitorController extends Controller
     {
         $dosens = Dosen::all();
         $antrians = AntrianBimbingan::all();
-        return view('monitor.index', compact('dosens', 'antrians'));
+        return view('monitor.index', compact(
+            'dosens',
+            'antrians'
+        ));
     }
     public function indexMobile()
     {

@@ -74,7 +74,7 @@ $nav1ref =  url('administrator-dashboard'.'/' . 1 );
                         ©   <script>
                                                 document.write(new Date().getFullYear())
                             </script>
-                            made with <i class="fa fa-heart" aria-hidden="true"></i> by
+                            made with ❤️ by
                         <a style="color: #252f40;" href="https://www.instagram.com/euisgn" class="font-weight-bold ml-1" target="_blank">Rahman Amarullah</a>
                     </div>
                 </div>
